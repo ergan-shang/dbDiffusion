@@ -44,8 +44,8 @@ def get_cluster_dict(target_name, KO_mat, KO_pert, adata, plot_path, save_path, 
     pert_adata = sc.AnnData(mat_for_emb)
 
     pert_adata.obs['celltype'] = pd.Series(all_pert_name, index=pert_adata.obs_names)
-    n_neighbors = 5
-    resolution = 2.
+    n_neighbors = # Choose your own parameters based on your dataset
+    resolution = # Choose your own parameter based on your dataset
     sc.pp.neighbors(pert_adata, n_neighbors=n_neighbors, use_rep='X')  # small neighbors more clusters
     sc.tl.leiden(pert_adata, resolution=resolution)  # big resolution more clusters
     sc.tl.umap(pert_adata)
@@ -99,8 +99,8 @@ def get_cluster_dict(target_name, KO_mat, KO_pert, adata, plot_path, save_path, 
     final_cor_mat = adata_gene_cov.obsm['X_pca']
 
     adata_gene = sc.AnnData(final_cor_mat)
-    neighbor = 20  # 20
-    resolution = 0.4  # 0.4
+    neighbor =   # Choose your own parameters based on your dataset
+    resolution =  # Choose your own parameters based on your dataset
     sc.pp.neighbors(adata_gene, n_neighbors=neighbor)
     sc.tl.leiden(adata_gene, resolution=resolution)
 
