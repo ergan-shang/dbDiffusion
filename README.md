@@ -2,4 +2,4 @@ This repository provides codes for conducting dbDiffusion in predicting unseen p
 
 dbDiffusion model is a generative framework that integrates diffusion models with classifier-free guidance derived from perturbation information, operating in latent space through a variational autoencoder (VAE).
 
-![Streamline of dbDiffusion](flow_chart.pdf)
+[Streamline of dbDiffusion](flow_chart.pdf)
