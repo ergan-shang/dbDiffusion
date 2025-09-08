@@ -10,7 +10,7 @@ dbDiffusion model is a generative framework that integrates diffusion models wit
 ## **Train the dbDiffusion Model**
 
 
-* Step 1: Get the clusters of perturbations and clusters of genes, and estimate the embedding of the unobserved perturbation. Run `functions/classifier_free/get_cluster_for_pert.py'. You need to point out the matrix for embeddings. That matrix could be PCA of a effect size matrix or pseudo-bulk cells. `functions/02_cluster_from_embeddings.py' demonstrates how to use the embeddings after PCA to get clusters of perturbations by Leiden's algorithm. In this procedure, we have no data such as gene expressions or effect sizes under the target perturbation.
+* Step 1: Get the clusters of perturbations and clusters of genes, and estimate the embedding of the unobserved perturbation. Run `functions/classifier_free/get_cluster_for_pert.py`. You need to point out the matrix for embeddings. That matrix could be PCA of a effect size matrix or pseudo-bulk cells. `functions/02_cluster_from_embeddings.py` demonstrates how to use the embeddings after PCA to get clusters of perturbations by Leiden's algorithm. In this procedure, we have no data such as gene expressions or effect sizes under the target perturbation.
 ![Streamline of dbDiffusion](figure/fig8.png)
 * Step 2: Train the Autoencoder. Run `functions/classifier_free/VAE/VAE_train.py`. You need to point out the training data, which should be in `.h5ad` format, where `adata.obs` contains cell type information. The `adata.obs['celltype']` values do not need to follow a specific format like `ctrl+A` (where `A` is a perturbation).  
 They can be any labels you like, for example:
