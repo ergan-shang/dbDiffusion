@@ -29,8 +29,8 @@ all_pert = np.load(data_path+'good_pert_name.npy').tolist()
 ######################################################################################################################
 pert_adata = sc.AnnData(KO_good_after_PCA)
 pert_adata.obs['celltype'] = pd.Series(all_pert, index=pert_adata.obs_names)
-n_neighbors = 5
-resolution = 2.
+n_neighbors = # Choose your own parameters based on your dataset
+resolution = # Choose your own parameters based on your dataset
 sc.pp.neighbors(pert_adata, n_neighbors=n_neighbors, use_rep='X') # small neighbors more clusters
 sc.tl.leiden(pert_adata, resolution=resolution) # big resolution more clusters
 sc.tl.umap(pert_adata)
